@@ -1,0 +1,23 @@
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        
+        if not nums:
+            return [[]]
+
+        result = [[]]
+
+        for num in nums:
+
+            new_result = []
+
+            for sub in result:
+                for i in range(len(sub) + 1):
+                    temp = sub.copy()
+                    temp.insert(i, num)
+                    new_result.append(temp)
+
+            result = new_result
+                    
+
+
+        return result
